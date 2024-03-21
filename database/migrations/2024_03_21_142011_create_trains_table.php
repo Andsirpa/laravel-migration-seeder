@@ -23,8 +23,8 @@ return new class extends Migration {
             $table->dateTime('arrival_time');
             $table->string('train_code', 15)->unique();
             $table->tinyInteger('coaches_number')->nullable();
-            $table->boolean('on_time');
-            $table->boolean('cancelled');
+            $table->boolean('on_time')->default(true);
+            $table->boolean('cancelled')->default(false);
             $table->timestamps();
         });
     }
