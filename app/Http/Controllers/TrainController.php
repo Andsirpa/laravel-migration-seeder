@@ -12,6 +12,8 @@ class TrainController extends Controller
     {
         // prendo i treni che partono oggi
         $trains = Train::whereDate("departure_time", today()->toDateString())->get();
-        return view('home');
+
+        // passo la lista dei treni per stamparla
+        return view('home', compact('trains'));
     }
 }
